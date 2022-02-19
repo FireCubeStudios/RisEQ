@@ -38,6 +38,8 @@ namespace RisEQ
             Sliders.Add(new SliderClass { Value = 12 });
             Sliders.Add(new SliderClass { Value = 12 });
             Sliders.Add(new SliderClass { Value = 12 });
+            ApplicationView.PreferredLaunchViewSize = new Size(800, 600);
+            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
             SlidersList.ItemsSource = Sliders;
             var titleBar = ApplicationView.GetForCurrentView().TitleBar;
 

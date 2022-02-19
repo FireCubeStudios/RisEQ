@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:controls="using:Microsoft.UI.Xaml.Controls" 
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:class="using:RisEQ.Classes"
-    mc:Ignorable="d"
+    mc:Ignorable="d" RequestedTheme="Light"
     controls:BackdropMaterial.ApplyToRootOrPageBackground="True">
     <Grid>
         <Border x:Name="AppTitleBar"
