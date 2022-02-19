@@ -43,37 +43,39 @@
             <x:String>Car</x:String>
             <x:String>Customized</x:String>
         </ComboBox>
-        <ComboBox Header="Manage sound for:" Width="180" SelectedIndex="0" Margin="12" HorizontalAlignment="Right" VerticalAlignment="Top">
+        <ComboBox Header="Manage sound for:" Width="180" SelectedIndex="0" Margin="16" HorizontalAlignment="Right" VerticalAlignment="Top">
             <x:String>Rise media player</x:String>
             <x:String>Fluntify</x:String>
         </ComboBox>
-        <StackPanel Orientation="Horizontal" Background="{ThemeResource LayerFillColorDefaultBrush}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0, 100, 0, 54">
-            <StackPanel Margin="12, 8, 12, 36" VerticalAlignment="Center">
-                <TextBlock FontWeight="SemiBold" FontSize="16" Opacity="0.5" Text="+ 12 dB"/>
-                <TextBlock FontWeight="SemiBold" FontSize="16" Opacity="0.5" Text="+ 6 dB" Margin="0, 50, 0, 0"/>
-                <TextBlock FontWeight="SemiBold" FontSize="16" Opacity="0.5" Text="0 dB" Margin="0, 50, 0, 50"/>
-                <TextBlock FontWeight="SemiBold" FontSize="16" Opacity="0.5" Text="- 6 dB" Margin="0, 0, 0, 50"/>
-                <TextBlock FontWeight="SemiBold" FontSize="16" Opacity="0.5" Text="- 12 dB"/>
-            </StackPanel>
-            <ListView x:Name="SlidersList">
-                <ListView.ItemsPanel>   
-                    <ItemsPanelTemplate>
-                        <StackPanel Orientation="Horizontal"/>
-                    </ItemsPanelTemplate>
-                </ListView.ItemsPanel>
-                <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="class:SliderClass">
-                        <StackPanel Margin="12, 8, 12, 8" Width="40" VerticalAlignment="Center">
-                            <Slider x:Name="SliderEQ" Maximum="12" Minimum="-12" Value="{x:Bind Value}" StepFrequency="1" TickFrequency="3" TickPlacement="BottomRight" VerticalAlignment="Stretch" Height="300" Orientation="Vertical"/>
-                            <StackPanel Orientation="Horizontal" Margin="2, 12, 0, 0">
-                                <TextBlock FontWeight="SemiBold" FontSize="16" Opacity="0.5" Text="{x:Bind SliderEQ.Value, Mode=OneWay}" Margin="0, 0, 4, 0"/>
-                                <TextBlock FontWeight="SemiBold" FontSize="16" Opacity="0.5" Text="Hz"/>
+        <Grid Background="{ThemeResource LayerFillColorDefaultBrush}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0, 100, 0, 54">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Margin="12, 8, 12, 36" VerticalAlignment="Center">
+                    <TextBlock FontWeight="SemiBold" FontSize="16" Opacity="0.5" Text="+ 12 dB"/>
+                    <TextBlock FontWeight="SemiBold" FontSize="16" Opacity="0.5" Text="+ 6 dB" Margin="0, 50, 0, 0"/>
+                    <TextBlock FontWeight="SemiBold" FontSize="16" Opacity="0.5" Text="0 dB" Margin="0, 50, 0, 50"/>
+                    <TextBlock FontWeight="SemiBold" FontSize="16" Opacity="0.5" Text="- 6 dB" Margin="0, 0, 0, 50"/>
+                    <TextBlock FontWeight="SemiBold" FontSize="16" Opacity="0.5" Text="- 12 dB"/>
+                </StackPanel>
+                <ListView x:Name="SlidersList" SelectionMode="None">
+                    <ListView.ItemsPanel>   
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="class:SliderClass">
+                            <StackPanel Margin="12, 8, 12, 8" Width="40" VerticalAlignment="Center">
+                                <Slider x:Name="SliderEQ" Maximum="12" Minimum="-12" Value="{x:Bind Value}" StepFrequency="1" TickFrequency="3" TickPlacement="BottomRight" VerticalAlignment="Stretch" Height="300" Orientation="Vertical"/>
+                                <StackPanel Orientation="Horizontal" Margin="2, 12, 0, 0">
+                                    <TextBlock FontWeight="SemiBold" FontSize="16" Opacity="0.5" Text="{x:Bind SliderEQ.Value, Mode=OneWay}" Margin="0, 0, 4, 0"/>
+                                    <TextBlock FontWeight="SemiBold" FontSize="16" Opacity="0.5" Text="Hz"/>
+                                </StackPanel>
                             </StackPanel>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+            </Grid>
         <CheckBox Content="Move nearby sliders together" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="12"/>
             <HyperlinkButton Content="Restore defaults" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="12" NavigateUri="http://www.microsoft.com" />
     </Grid>
